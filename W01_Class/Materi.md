@@ -50,7 +50,7 @@ Sebagai contoh, dari class Vehicle, kita dapat membuat object yang mewakili kend
 
 ### Cara Membuat Object
 
-Selanjutnya, kita dapat membuat beberapa object dari class Vehicle kita dan menggunakan sintaks titik (dot syntax) untuk mengakses attribute-attributte dan method-method mereka. Berikut adalah contoh cara membuat beberapa object Vehicle dan mengakses attribute dan method menggunakan sintaks titik:
+Selanjutnya, kita dapat membuat beberapa object dari class Vehicle kita dan menggunakan sintaks titik (dot syntax) untuk mengakses attribute-attribute dan method-method mereka. Berikut adalah contoh cara membuat beberapa object Vehicle dan mengakses attribute dan method menggunakan sintaks titik:
 
 ```java
 class MyClass {
