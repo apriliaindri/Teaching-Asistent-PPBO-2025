@@ -13,7 +13,7 @@
 [Constructor](#constructor)
 
 ## Pemrograman Berbasis Objek
-Bahasa pemrograman Java menggunakan konsep Pemrograman Berorientasi Objek (PBO), yaitu gaya pemrograman yang meniru cara manusia melihat dunia nyata. Di dalam PBO, setiap objek adalah unit mandiri yang memiliki identitas unik. Contohnya, sebuah apel atau cangkir merupakan objek yang berbeda meskipun tampak sama.
+Java menggunakan Pemrograman Berorientasi Objek (PBO), gaya pemrograman yang ditujukan untuk membuat pemikiran tentang pemrograman lebih mendekati pemikiran tentang dunia nyata. Di dalam PBO, setiap objek adalah unit mandiri yang memiliki identitas unik. Contohnya, sebuah apel atau cangkir merupakan objek yang berbeda meskipun tampak sama.
 
 Objek memiliki 2 hal penting, yaitu:
 - Attribute merupakan sifat atau karakteristik yang dimiliki oleh suatu objek. Contoh : warna mobil, jumlah roda, dan isi cangkir.
