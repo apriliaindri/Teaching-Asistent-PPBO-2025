@@ -12,7 +12,7 @@ Dengan contoh isi file sebagai berikut:
 
 // import ...
 
-public class PPBO_01_NIM_NamaLengkap {
+public class PPBO_02_NIM_NamaLengkap {
     public static void main(String[] args) {
         // ...
     }
