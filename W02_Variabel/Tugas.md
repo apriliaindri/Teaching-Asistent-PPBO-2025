@@ -16,7 +16,7 @@ Anda adalah seorang pemrogram yang diberi tugas untuk membuat program sederhana 
 - `pakaiBarang` menerima parameter berupa nama barang dan jumlah yang digunakan, kemudian mengurangi stok barang dan memperbarui total nilai inventaris. 
 - `tambahStok` menerima parameter berupa nama barang dan jumlah barang yang ditambahkan, lalu menambahkan jumlah barang ke inventaris kantor.
 
-6. **Konstanta**: Gunakan konstanta untuk mendefinisikan batas stok minimum ('MIN_STOK') agar program dapat memberi peringatan jika stok barang terlalu sedikit.
+6. **Konstanta**: Gunakan konstanta untuk mendefinisikan batas stok minimum (`MIN_STOK`) agar program dapat memberi peringatan jika stok barang terlalu sedikit.
 
 Dengan contoh isi file sebagai berikut:
 
