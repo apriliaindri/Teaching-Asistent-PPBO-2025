@@ -23,7 +23,7 @@ public class PPBO_01_NIM_NamaLengkap {
 
 ## Pengumpulan:
 
-Tugas dikumpulkan dalam 2 format untuk laporan dalam bentuk Portable Document File (\*.pdf) dengan ketentuan nama berkas **PPBO_01_NIM_NamaLengkap.pdf** dan untuk source kode dengan **PPBO_01_NIM_NamaLengkap.java.**
+Tugas dikumpulkan dalam 2 format untuk laporan dalam bentuk Portable Document File (\*.pdf) dengan ketentuan nama berkas **PPBO_01_NIM_NamaLengkap.pdf** dan untuk source kode dengan **PPBO_02_NIM_NamaLengkap.java.**
 
 ## Tenggat Waktu Pengerjaan
 
