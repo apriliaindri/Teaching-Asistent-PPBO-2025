@@ -167,3 +167,61 @@ Exception in thread "main" java.lang.AssertionError:  Not valid
 ```
 
 Maka, akan muncul `AssertionError` dan diberi keterangan `Not valid` di mana hal itu adalah `expression 2` pada syntax `assert expression 1 : expression 2;`. Berikut adalah contoh penggabungan dengan `exception handling`:
+
+```java
+import java.util.Scanner;
+public class ExceptionAssert {
+    public static void main(String[] args) {
+        // Exception Handling
+        try {
+            Scanner scanner = new Scanner( System.in );  
+            System.out.print("Enter your score: ");  
+                
+            int value = scanner.nextInt();  
+
+            // Assertion
+            assert value>=59:"D";  
+            
+            System.out.println("Your score is "+value);
+            scanner.close();
+
+            // Mengambil Exception dari Assertion
+        } catch (AssertionError e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+        System.out.println("Bye");
+    }
+}
+```
+
+```java
+Enter your score: 55
+Error:  D
+Bye
+```
+
+Output di atas adalah apabila user menginput value < 59. Apabila user menginput value >= 59, maka outputnya adalah:
+
+```java
+Enter your score 80: 
+Your score is 80
+Bye
+```
+
+# Baca Lebih Lanjut
+1. **Exceptions**:
+   - [Lesson: Exceptions (The Java™ Tutorials > Essential Java Classes) - Oracle](https://docs.oracle.com/javase%2Ftutorial%2F/essential/exceptions/index.html)
+   - [Exceptions in Java - GeeksforGeeks](https://www.geeksforgeeks.org/exceptions-in-java/)
+   - [Java Exceptions - W3Schools](https://www.w3schools.com/java/java_try_catch.asp)
+   - [Exception Handling in Java - javatpoint](https://www.javatpoint.com/exception-handling-in-java)
+   - [Exception Class in Java - javatpoint](https://www.javatpoint.com/exception-class-in-java)
+   - [Throwable (Java Platform SE 7) - Oracle](https://docs.oracle.com/javase/7/docs/api/java/lang/Throwable.html)
+   - [Object (Java Platform SE 7) - Oracle](https://docs.oracle.com/javase/7/docs/api/java/lang/Object.html)
+   - [Java Custom Exception - javatpoint](https://www.javatpoint.com/custom-exception)
+   - [throw and throws in Java - GeeksforGeeks](https://www.geeksforgeeks.org/throw-throws-java/)
+2. **Assertions**:
+   - [Java Assertion - javatpoint](https://www.javatpoint.com/assertion-in-java)
+   - [Assertions in Java - GeeksforGeeks](https://www.geeksforgeeks.org/assertions-in-java/)
+   - [How to use assertions in Java - InfoWorld](https://www.infoworld.com/article/3543239/how-to-use-assertions-in-java.html)
+   - [Java Assertions - Programiz](https://www.programiz.com/java-programming/assertions)
+   - [Programming With Assertions - Oracle](https://docs.oracle.com/javase/8/docs/technotes/guides/language/assert.html#:~:text=An%20assertion%20is%20a%20statement,than%20the%20speed%20of%20light.)
