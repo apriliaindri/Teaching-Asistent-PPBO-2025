@@ -112,4 +112,4 @@ assert expression1 : expression2;
 ```
 
 
-Secara default, assertion diatur menjadi disabled. Berikut adalah cara mengaktifkannya, jalankan java –ea <nama file> atau java -enableassertions <nama file> di terminal.
+Secara default, 'assertion' diatur menjadi disabled. Berikut adalah cara mengaktifkannya, jalankan 'java –ea <nama file>' atau 'java -enableassertions <nama file>' di terminal.
