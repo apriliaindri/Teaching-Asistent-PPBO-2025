@@ -163,7 +163,7 @@ Program akan berjalan secara normal. Apabila user menginput value < 20, misal 17
 ```
 Enter your age: 17
 Exception in thread "main" java.lang.AssertionError:  Not valid
-        at haizk.Main.main(Main.java:11)
+        at Main.main(Main.java:9)
 ```
 
 Maka, akan muncul `AssertionError` dan diberi keterangan `Not valid` di mana hal itu adalah `expression 2` pada syntax `assert expression 1 : expression 2;`. Berikut adalah contoh penggabungan dengan `exception handling`:
