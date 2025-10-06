@@ -203,7 +203,7 @@ Bye
 Output di atas adalah apabila user menginput value < 59. Apabila user menginput value >= 59, maka outputnya adalah:
 
 ```java
-Enter your score 80: 
+Enter your score: 80
 Your score is 80
 Bye
 ```
