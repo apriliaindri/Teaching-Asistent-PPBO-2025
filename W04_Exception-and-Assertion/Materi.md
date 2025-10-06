@@ -101,3 +101,15 @@ Output:
 java.lang.ArrayIndexOutOfBoundsException: Index 10 out of bounds for length 5
 rest of the code...
 ```
+
+# Assertion 
+Assertion digunakan untuk memeriksa kebenaran asumsi dalam program dengan keyword assert. Ketika menjalankan assertion, pernyataan tersebut diyakini bernilai benar (true) dan apabila pernyataan tersebut ternyata salah, maka JVM akan melempar (throws) error Bernama AssertionError. Assertion umumnya dipakai saat pengujian (testing) selama pengembangan program.
+
+Untuk menggunakan keyword assert, terdapat 2 cara:
+```java
+assert expression;               
+assert expression1 : expression2; 
+```
+
+
+Secara default, assertion diatur menjadi disabled. Berikut adalah cara mengaktifkannya, jalankan java –ea <nama file> atau java -enableassertions <nama file> di terminal.
