@@ -112,4 +112,24 @@ assert expression1 : expression2;
 ```
 
 
-Secara default, `assertion` diatur menjadi disabled. Berikut adalah cara mengaktifkannya, jalankan `java –ea <nama file>` atau `java -enableassertions <nama file>` di terminal.
+Secara default, `assertion` diatur menjadi disabled. Cara mengaktifkannya, jalankan `java –ea <nama file>` atau `java -enableassertions <nama file>` di terminal.
+
+## Contoh Kasus
+```java
+package contoh;
+
+public class simpleassert {
+    public static void main(String[] args) {
+        assert false : "Contoh assertion!";
+    }
+}
+```
+
+Apabila assertion diatur menjadi disabled, maka tidak akan muncul output apapun. Namun, apabila diaktifkan, berikut adalah outputnya:
+
+```
+Exception in thread "main" java.lang.AssertionError: Contoh assertion!
+        at contoh.simpleassert.main(simpleassert.java:5)
+```
+
+`contoh.simpleassert.main` adalah tempat di mana method ditempatkan, akan berubah-ubah sesuai dengan lokasi file.
