@@ -133,3 +133,37 @@ Exception in thread "main" java.lang.AssertionError: Contoh assertion!
 ```
 
 `contoh.simpleassert.main` adalah tempat di mana method ditempatkan, akan berubah-ubah sesuai dengan lokasi file.
+
+```java
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args)
+    {
+        Scanner scanner = new Scanner( System.in );  
+        System.out.print("Enter your age: ");  
+            
+        int value = scanner.nextInt();  
+        assert value>=20:" Not valid";  
+        
+        System.out.println("Your age is "+value);  
+        scanner.close();
+    }
+}
+```
+
+Contoh di atas adalah contoh yang lebih nyata. Program akan meminta user untuk menginput angka, apabila user menginput value >= 20, misal 21:
+
+```
+Enter your age: 21
+Your age is 21
+```
+
+Program akan berjalan secara normal. Apabila user menginput value < 20, misal 17:
+
+```
+Enter your age: 17
+Exception in thread "main" java.lang.AssertionError:  Not valid
+        at haizk.Main.main(Main.java:11)
+```
+
+Maka, akan muncul `AssertionError` dan diberi keterangan `Not valid` di mana hal itu adalah `expression 2` pada syntax `assert expression 1 : expression 2;`. Berikut adalah contoh penggabungan dengan `exception handling`:
