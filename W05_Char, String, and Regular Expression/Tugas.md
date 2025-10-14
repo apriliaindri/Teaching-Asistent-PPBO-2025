@@ -27,7 +27,7 @@ Buatlah sebuah program Java yang memvalidasi data dari input yang dimasukkan use
 4. Panjang alamat email antara 5 hingga 50 karakter.
 5. Program harus mengembalikan pesan "Email Valid" jika alamat email valid, dan "Email Tidak Valid" jika tidak valid.
 
-Dengan contoh isi file sebagai berikut:
+Dengan isi file sebagai berikut:
 ```java
 // Nama : ...
 // NIM  : ...
