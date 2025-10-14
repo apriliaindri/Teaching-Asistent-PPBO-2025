@@ -1,1 +1,48 @@
+# Tugas 5
 
+## Ketentuan Tugas
+
+Buatlah sebuah program Java yang memvalidasi data dari input yang dimasukkan user berupa tanggal lahir, nomor telepon dan alamat email. Tanggal lahir, nomor telepon, dan alamat email harus memnuhi kriteria sebagai berikut.
+
+
+### Kriteria Tanggal Lahir :
+
+1. Format tanggal adalah "dd/mm/yyyy" (hari/bulan/tahun).
+2. Hari (dd) antara 01 hingga 31.
+3. Bulan (mm) antara 01 hingga 12.
+4. Tahun (yyyy) adalah angka empat digit.
+5. Program harus mengembalikan pesan "Tanggal Lahir Valid" jika Tanggal Lahir yang dimasukkan valid, dan "Tanggal Lahir Tidak Valid" jika tidak valid.
+
+### Kriteria Nomor telepon :
+
+1. Dimulai dengan kode negara, yang diawali dengan "+" atau "00", diikuti oleh kode negara (misalnya, "+62" atau "0044").
+2. Kemudian, nomor telepon harus memiliki 10 hingga 15 digit numerik.
+3. Program harus mengembalikan pesan "Nomor HP Valid" jika nomor telepon valid, dan "Nomor 4. HP Tidak Valid" jika tidak valid.
+
+### Kriteria Alamat Email :
+
+1. Dimulai dengan huruf atau angka.
+2. Mengandung satu "@".
+3. Setidaknya memiliki satu titik setelah "@".
+4. Panjang alamat email antara 5 hingga 50 karakter.
+5. Program harus mengembalikan pesan "Email Valid" jika alamat email valid, dan "Email Tidak Valid" jika tidak valid.
+
+Dengan contoh isi file sebagai berikut:
+```java
+// Nama : ...
+// NIM  : ...
+
+public class PPBO_05_NIM_NamaLengkap {
+    public static void main(String[] args) {
+        // ...
+    }
+}
+```
+
+## Pengumpulan:
+
+Tugas dikumpulkan dalam 2 format untuk laporan dalam bentuk Portable Document File (\*.pdf) dengan ketentuan nama berkas **PPBO_05_NIM_NamaLengkap.pdf** dan untuk source kode dengan **PPBO_05_NIM_NamaLengkap.java.** atau  **PPBO_05_NIM_NamaLengkap.zip.** (apabila lebih dari 1 file).
+
+## Tenggat Waktu Pengerjaan
+
+Tenggat waktu pengerjaan Kelas C Informatika Tugas 5 adalah hari **Rabu, 22 Oktober 2025, pukul 23.59.**
