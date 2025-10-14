@@ -15,9 +15,9 @@ Buatlah sebuah program Java yang memvalidasi data dari input yang dimasukkan use
 
 ### Kriteria Nomor telepon :
 
-1. Dimulai dengan kode negara, yang diawali dengan "+" atau "00", diikuti oleh kode negara (misalnya, "+62" atau "0044").
+1. Dimulai dengan kode negara, yang diawali dengan "+" atau "00", diikuti oleh kode negara (misalnya, "+628" atau "00628").
 2. Kemudian, nomor telepon harus memiliki 10 hingga 15 digit numerik.
-3. Program harus mengembalikan pesan "Nomor HP Valid" jika nomor telepon valid, dan "Nomor 4. HP Tidak Valid" jika tidak valid.
+3. Program harus mengembalikan pesan "Nomor HP Valid" jika nomor telepon valid, dan "Nomor HP Tidak Valid" jika tidak valid.
 
 ### Kriteria Alamat Email :
 
