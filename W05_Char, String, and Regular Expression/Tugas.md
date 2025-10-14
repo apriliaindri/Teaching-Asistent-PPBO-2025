@@ -2,7 +2,7 @@
 
 ## Ketentuan Tugas
 
-Buatlah sebuah program Java yang memvalidasi data dari input yang dimasukkan user berupa tanggal lahir, nomor telepon dan alamat email. Tanggal lahir, nomor telepon, dan alamat email harus memnuhi kriteria sebagai berikut.
+Buatlah sebuah program Java dengan menerapkan materi **char, string, dan regular expression** yang digunakan untuk memvalidasi data dari input yang dimasukkan user berupa tanggal lahir, nomor telepon dan alamat email. Tanggal lahir, nomor telepon, dan alamat email harus memenuhi kriteria sebagai berikut.
 
 
 ### Kriteria Tanggal Lahir :
