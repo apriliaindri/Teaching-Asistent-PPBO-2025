@@ -30,6 +30,21 @@ for (int i = 0; i < ll.size(); i++)
     System.out.print(ll.get(i) + " ");
 ```
 
+Ada 2 cara dalam remove(), yaitu sebagai berikut: 
+
+```java 
+LinkedList<Integer> ll = new LinkedList<>();
+ll.add(10);
+ll.add(15);
+ll.add(20);
+ll.remove(2);
+System.out.println(ll);
+```
+
+```java
+ll.remove(Integer.valueOf(20));
+```
+
 #### c. Vector  
 Vector juga memungkinkan pembuatan array dinamis dalam Java. Vector identik dengan ArrayList dalam hal implementasi. Namun, perbedaan utama antara vektor dan ArrayList adalah bahwa Vektor disinkronkan dan ArrayList tidak disinkronkan. Maksud dari "sinkronisasi" di sini adalah:
 
