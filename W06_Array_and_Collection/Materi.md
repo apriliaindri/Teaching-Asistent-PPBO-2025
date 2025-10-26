@@ -48,7 +48,7 @@ ll.remove(Integer.valueOf(20));
 #### c. Vector  
 Vector juga memungkinkan pembuatan array dinamis dalam Java. Vector identik dengan ArrayList dalam hal implementasi. Namun, perbedaan utama antara vektor dan ArrayList adalah bahwa Vektor disinkronkan dan ArrayList tidak disinkronkan. Maksud dari "sinkronisasi" di sini adalah:
 
-**Vector:** Ketika Anda menggunakan Vector untuk menyimpan data, itu berarti operasi-operasi seperti penambahan, penghapusan, atau iterasi ke dalamnya akan secara otomatis dilindungi dari akses konkuren oleh beberapa thread. Artinya, hanya satu thread yang dapat mengakses Vector pada satu waktu. Hal ini memastikan keamanan dalam kasus penggunaan bersama (multithreaded) di mana beberapa thread dapat mengakses Vector secara bersamaan. Konsep ini akan dipelajari kemudian.
+**Vector:** Ketika Anda menggunakan Vector untuk menyimpan data, itu berarti operasi-operasi seperti penambahan, penghapusan, atau iterasi ke dalamnya akan secara otomatis dilindungi dari akses konkuren oleh beberapa thread. Artinya, hanya satu thread yang dapat mengakses Vector pada satu waktu. Hal ini memastikan keamanan dalam kasus penggunaan bersama (multithreaded) di mana beberapa thread dapat mengakses Vector secara bersamaan.
 
 **ArrayList:** Sebaliknya, ArrayList tidak memiliki sinkronisasi otomatis. Hal ini berarti jika Anda menggunakannya dalam lingkungan multithreaded, Anda harus secara manual mengimplementasikan mekanisme sinkronisasi, seperti penguncian (locking), untuk melindungi akses ke ArrayList dari beberapa thread. Jika Anda tidak melakukan ini, maka Anda berisiko menghadapi masalah seperti race condition (thread saling berebut mengakses resource) dan ketidak-konsistenan data jika beberapa thread mencoba mengubah ArrayList secara bersamaan tanpa koordinasi.
 
@@ -71,4 +71,38 @@ System.out.println(v);
 // Menampilkan elemen satu per satu
 for (int i = 0; i < v.size(); i++)
     System.out.print(v.get(i) + " ");
+```
+
+#### d. Stack
+Kelas Stack memodelkan dan mengimplementasikan struktur data Stack. Kelas ini didasarkan pada prinsip dasar *last-in-first-out* (LIFO). Selain operasi dasar push dan pop, kelas ini menyediakan tiga fungsi tambahan: `empty`, `search`, dan `peek`. Kelas ini juga dapat disebut sebagai subclass dari Vector.
+
+Contoh Stack:
+
+```java
+// Contoh Stack
+Stack<String> stack = new Stack<String>();
+stack.push("FATISDA");
+stack.push("FMIPA");
+stack.push("FP");
+stack.push("FKIP");
+
+// Iterator untuk Stack
+Iterator<String> itr = stack.iterator();
+
+// Menampilkan Stack
+while (itr.hasNext()) {
+    System.out.print(itr.next() + " ");
+}
+
+System.out.println();
+
+stack.pop();
+
+// Iterator untuk Stack
+itr = stack.iterator();
+
+// Menampilkan Stack
+while (itr.hasNext()) {
+    System.out.print(itr.next() + " ");
+}
 ```
