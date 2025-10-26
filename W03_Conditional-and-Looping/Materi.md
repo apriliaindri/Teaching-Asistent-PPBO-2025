@@ -1,4 +1,4 @@
-ï»¿# Conditional Statement
+ÿþï»¿# Conditional Statement
 Conditional statement atau pernyataan kondisional dalam bahasa pemrograman Java adalah jenis pernyataan yang digunakan untuk mengatur eksekusi program berdasarkan kondisi atau kriteria tertentu. Berikut adalah beberapa jenis pernyataan kondisional yang umum digunakan dalam Java
 
 ## if Statement
@@ -6,16 +6,16 @@ Pernyataan if digunakan untuk menjalankan blok kode jika kondisi yang diberikan 
 
 Contoh:
 ```java
-if (kondisi) {
+if (kondisi{
     // Kode yang akan dijalankan jika kondisi benar
 }
 ```
 ## if-else Statement
-Pernyataan if-else digunakan untuk menjalankan satu blok kode jika kondisi benar (true) dan blok kode lainnya jika kondisi salah (false).
+Pernyataan if-else digunakan untuk menjalankan satu blok kode jika kondisi benar (truedan blok kode lainnya jika kondisi salah (false).
 
 Contoh:
 ```java
-if (kondisi) {
+if (kondisi{
     // Kode yang akan dijalankan jika kondisi benar
 } else {
     // Kode yang akan dijalankan jika kondisi salah
@@ -51,7 +51,7 @@ switch (nilai) {
 }
 ```
 ## Ternary Operator
-Operator ternary (? :) digunakan untuk menentukan nilai suatu ekspresi berdasarkan kondisi tertentu.
+Operator ternary (? :digunakan untuk menentukan nilai suatu ekspresi berdasarkan kondisi tertentu.
 
 Contoh:
 ```java
@@ -88,7 +88,7 @@ daftarNama.add("Alice");
 daftarNama.add("Bob");
 daftarNama.add("Charlie");
 
-for (String nama : daftarNama) {
+for (String nama : daftarNama{
     System.out.println(nama);
 }
 ```
@@ -117,7 +117,7 @@ do {
 Looping statement memungkinkan Kita untuk mengotomatiskan tugas-tugas yang berulang, memproses data dalam jumlah besar, atau membuat algoritma yang fleksibel dalam pengembangan perangkat lunak Java. Pastikan untuk merancang kondisi perulangan dengan benar agar tidak terjebak dalam perulangan tak terbatas.
 
 # Break and Continue
-break dan continue adalah dua pernyataan kontrol yang digunakan dalam bahasa pemrograman Java untuk mengubah aliran eksekusi dalam pernyataan perulangan (looping statement) seperti for, while, dan do-while.
+break dan continue adalah dua pernyataan kontrol yang digunakan dalam bahasa pemrograman Java untuk mengubah aliran eksekusi dalam pernyataan perulangan (looping statementseperti for, while, dan do-while.
 
 ## Break
 Pernyataan break digunakan untuk menghentikan perulangan saat ini dan keluar dari blok perulangan. Ini berguna ketika Kita ingin menghentikan perulangan sebelum mencapai kondisi akhir yang diharapkan.
@@ -125,7 +125,7 @@ Pernyataan break digunakan untuk menghentikan perulangan saat ini dan keluar dar
 Implementasi:
 ```java
 for (int i = 1; i <= 10; i++) {
-    if (i == 5) {
+    if (i == 5{
         break; // Keluar dari perulangan jika i sama dengan 5
     }
     System.out.println(i);
@@ -146,7 +146,7 @@ Pernyataan continue digunakan untuk melanjutkan ke iterasi berikutnya dalam peru
 Implementasi:
 ```java
 for (int i = 1; i <= 10; i++) {
-    if (i % 2 == 0) {
+    if (i % 2 == 0{
         continue; // Lewati iterasi saat i adalah bilangan genap
     }
     System.out.println(i);
