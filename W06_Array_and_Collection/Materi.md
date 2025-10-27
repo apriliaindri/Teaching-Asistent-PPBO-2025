@@ -184,3 +184,56 @@ while (itr.hasNext()) {
     System.out.print(itr.next() + " ");
 }
 ```
+
+### 4. Interface Queue
+Seperti namanya, interface queue menjaga urutan FIFO (First In First Out) seperti antrean di dunia nyata. Interface ini digunakan untuk menyimpan semua elemen di mana urutan elemen dianggap penting. Misalnya, ketika kita mencoba memesan tiket, tiket dijual berdasarkan prinsip first come first serve. Oleh karena itu, orang yang tiba pertama kali dalam queue akan mendapatkan tiket terlebih dahulu. Kita dapat membuat objek queue dengan salah satu dari kelas-kelas ini karena semua kelas turunan ini mengimplementasikan interface queue.
+
+Contohnya:
+
+```java
+Queue<T> pq = new PriorityQueue<>(); 
+Queue<T> ad = new ArrayDeque<>(); 
+```
+
+Implementasi interface queue yang paling sering digunakan adalah PriorityQueue.
+
+#### a. Priority Queue  
+PriorityQueue digunakan ketika objek harus diproses berdasarkan prioritas. Meskipun queue mengikuti algoritma First-In-First-Out, kadang-kadang elemen-elemen dalam queue harus diproses sesuai dengan prioritas, maka kelas ini diperlukan. Elemen-elemen dalam priority queue diurutkan berdasarkan urutan alami, atau berdasarkan Comparator yang disediakan pada saat konstruksi queue, tergantung pada konstruktor mana yang digunakan.
+
+Contoh:
+
+```java
+PriorityQueue<Integer> pQueue = new PriorityQueue<Integer>();
+
+pQueue.add(10);
+pQueue.add(20);
+pQueue.add(15);
+
+// Mencetak elemen teratas
+System.out.println(pQueue.peek());
+
+// Mencetak elemen teratas lalu menghapusnya dari container PriorityQueue
+System.out.println(pQueue.poll());
+
+// Mencetak elemen teratas
+System.out.println(pQueue.peek());
+```
+
+Output:
+
+```
+10
+10
+15
+```
+
+### 5. Interface Deque
+Deque, yang juga dikenal sebagai double-ended queue, adalah struktur data di mana kita dapat menambahkan dan menghapus elemen dari kedua ujung queue (double-ended). Interface ini meng-extend interface queue. Kelas yang mengimplementasikan interface ini adalah ArrayDeque. Karena kelas ArrayDeque mengimplementasikan interface Deque, kita dapat membuat objek deque dengan kelas ini.
+
+Contohnya:
+
+```java
+Deque<T> ad = new ArrayDeque<>(); 
+```
+
+Di mana T adalah tipe objek. Kelas yang mengimplementasikan interface deque adalah ArrayDeque.
