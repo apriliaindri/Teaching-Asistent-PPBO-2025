@@ -32,9 +32,9 @@ Kerangka kerja collection ini memiliki beberapa interface di mana setiap interfa
 ### 1. Interface Iterable
 Interface ini adalah interface root untuk seluruh framework Collection. Interface collection membutuhkan iterasi. Oleh karena itu, secara inheren, semua interface dan kelas di bawahnya mengimplementasikan interface ini. Fungsi utama interface ini adalah menyediakan iterator untuk collection. Oleh karena itu, interface ini hanya berisi satu method abstrak, yaitu iterator.
 
-    ```java
-    Iterator iterator();
-    ```
+```java
+Iterator iterator();
+```
 
 ### 2. Interface `Collection`
 Interface ini mengembangkan interface yang dapat diiterasi dan diimplementasikan oleh semua kelas dalam kerangka kerja collection. Interface ini berisi semua method dasar yang dimiliki setiap collection, seperti menambahkan data ke dalam collection, menghapus data, menghapus semua data, dan sebagainya. Semua method ini diimplementasikan dalam interface ini karena method-method ini diimplementasikan oleh semua kelas tanpa memandang style implementasinya. Dengan memiliki method-method ini, interface memastikan bahwa nama-nama method tersebut berlaku universal untuk semua collection. Oleh karena itu, kita dapat mengatakan bahwa interface ini membangun dasar di mana kelas-kelas collection diimplementasikan.
