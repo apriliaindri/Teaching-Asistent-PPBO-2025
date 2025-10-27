@@ -237,3 +237,52 @@ Deque<T> ad = new ArrayDeque<>();
 ```
 
 Di mana T adalah tipe objek. Kelas yang mengimplementasikan interface deque adalah ArrayDeque.
+
+#### a. ArrayDeque  
+Kelas ArrayDeque yang merupakan bagian dari Java Collection Framework yang menyediakan cara untuk menggunakan array yang ukurannya dapat disesuaikan (resizable). Struktur ini merupakan bentuk khusus dari array yang dapat bertambah ukurannya secara otomatis dan memungkinkan pengguna untuk menambahkan maupun menghapus elemen dari kedua sisi antrian (queue), baik dari depan maupun belakang. ArrayDeque tidak memiliki batas kapasitas tetap, sehingga ukurannya akan tumbuh sesuai kebutuhan untuk mendukung berbagai operasi secara efisien.
+
+Mari kita pahami ArrayDeque dengan contoh:
+
+```java
+
+ArrayDeque<Integer> deQueue = new ArrayDeque<Integer>(10);
+
+deQueue.add(10);
+deQueue.add(20);
+deQueue.add(30);
+deQueue.add(40);
+deQueue.add(50);
+
+System.out.println(deQueue);
+
+// menghapus semua elemen
+deQueue.clear();
+
+// menambah elemen pada head (depan)
+deQueue.addFirst(564);
+deQueue.addFirst(291);
+
+// menambah elemen pada tail (belakang)
+deQueue.addLast(24);
+deQueue.addLast(14);
+
+System.out.println(deQueue);
+```
+
+Output:
+
+```
+[10, 20, 30, 40, 50]
+[291, 564, 24, 14]
+```
+
+### 6. Interface Set
+Interface Set adalah struktur kumpulan objek yang tidak menggunakan urutan serta tidak memperbolehkan adanya nilai duplikat. Set ini digunakan ketika kita ingin menghindari duplikasi objek. Interface Set ini diimplementasikan oleh berbagai kelas seperti HashSet, TreeSet, LinkedHashSet, dan lain-lain. Karena semua kelas turunan mengimplementasikan set, kita dapat membuat objek set dengan salah satu dari kelas-kelas ini.
+
+Contohnya:
+
+```java
+Set<T> hs = new HashSet<>(); 
+Set<T> lhs = new LinkedHashSet<>(); 
+Set<T> ts = new TreeSet<>();
+```
