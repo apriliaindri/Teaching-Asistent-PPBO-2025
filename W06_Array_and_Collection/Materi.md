@@ -384,8 +384,10 @@ Mari pahami HashMap dengan contoh:
 // Membuat HashMap dan menambahkan elemen
 HashMap<Integer, String> hm = new HashMap<Integer, String>();
 
-hm.put(1, "Lu punya uang");
-hm.put(2, "Lu punya kuasa");
+hm.put(1, "Bangga");
+hm.put(2, "Pada");
+hm.put(3, "Tiap");
+hm.put(4, "Proses");
 
 // Menemukan nilai untuk sebuah kunci
 System.out.println("Nilai untuk kunci 1 adalah " + hm.get(1));
