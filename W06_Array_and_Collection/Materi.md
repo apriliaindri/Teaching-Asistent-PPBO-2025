@@ -1,3 +1,31 @@
+## Method dalam Interface Collection
+
+Berikut adalah method dalam interface Collection:
+
+| Method                        | Deskripsi                                                                                                    |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `add(Object)`                 | Method ini digunakan untuk menambahkan sebuah objek ke dalam collection.                                        |
+| `addAll(Collection c)`        | Method ini menambahkan semua elemen dalam collection yang diberikan ke dalam collection ini.                     |
+| `clear()`                     | Method ini menghapus semua elemen dari collection ini.                                                         |
+| `contains(Object o)`          | Method ini mengembalikan nilai true jika collection ini mengandung elemen yang ditentukan.                     |
+| `containsAll(Collection c)`   | Method ini mengembalikan nilai true jika collection ini mengandung semua elemen dalam collection yang diberikan. |
+| `equals(Object o)`            | Method ini membandingkan objek yang ditentukan dengan collection ini untuk kesamaan.                           |
+| `hashCode()`                  | Method ini digunakan untuk mengembalikan nilai hash code untuk collection ini.                                  |
+| `isEmpty()`                   | Method ini mengembalikan nilai true jika collection ini tidak mengandung elemen.                                 |
+| `iterator()`                  | Method ini mengembalikan iterator untuk elemen-elemen dalam collection ini.                                     |
+| `max()`                       | Method ini digunakan untuk mengembalikan nilai maksimum yang ada dalam collection.                              |
+| `parallelStream()`            | Method ini mengembalikan sebuah Parallel Stream dengan collection ini sebagai sumbernya.                       |
+| `remove(Object o)`            | Method ini digunakan untuk menghapus objek yang diberikan dari collection. Jika terdapat nilai duplikat, maka method ini akan menghapus kemunculan pertama objek tersebut. |
+| `removeAll(Collection c)`     | Method ini digunakan untuk menghapus semua objek yang disebutkan dalam collection yang diberikan dari collection ini. |
+| `removeIf(Predicate filter)`  | Method ini digunakan untuk menghapus semua elemen dalam collection ini yang memenuhi predikat yang diberikan. |
+| `retainAll(Collection c)`     | Method ini digunakan untuk menyimpan hanya elemen-elemen dalam collection ini yang terdapat dalam collection yang ditentukan. |
+| `size()`                      | Method ini digunakan untuk mengembalikan jumlah elemen dalam collection.                                        |
+| `spliterator()`               | Method ini digunakan untuk membuat sebuah Spliterator untuk elemen-elemen dalam collection ini.               |
+| `stream()`                    | Method ini digunakan untuk mengembalikan sebuah Sequential Stream dengan collection ini sebagai sumbernya.      |
+| `toArray()`                   | Method ini digunakan untuk mengembalikan sebuah array yang berisi semua elemen dalam collection ini.            |
+
+Dengan Framework Collection, Anda dapat mengelola data lebih mudah dengan memanfaatkan collection yang efisien dalam aplikasi Java.
+
 #### b. LinkedList  
 Kelas LinkedList adalah salah satu cara untuk menyimpan dan mengatur data dalam bentuk rangkaian elemen yang saling terhubung. LinkedList menyimpan tiap elemen (disebut node) secara terpisah di memori.
 
