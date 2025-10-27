@@ -26,6 +26,56 @@ Berikut adalah method dalam interface Collection:
 
 Dengan Framework Collection, Anda dapat mengelola data lebih mudah dengan memanfaatkan collection yang efisien dalam aplikasi Java.
 
+## Interface yang Mengembangkan Interface Collection
+Kerangka kerja collection ini memiliki beberapa interface di mana setiap interface digunakan untuk menyimpan jenis data tertentu. Berikut adalah interface yang ada dalam kerangka kerja ini.
+
+### 1. Interface Iterable
+Interface ini adalah interface root untuk seluruh framework Collection. Interface collection membutuhkan iterasi. Oleh karena itu, secara inheren, semua interface dan kelas di bawahnya mengimplementasikan interface ini. Fungsi utama interface ini adalah menyediakan iterator untuk collection. Oleh karena itu, interface ini hanya berisi satu method abstrak, yaitu iterator.
+
+    ```java
+    Iterator iterator();
+    ```
+
+### 2. Interface `Collection`
+Interface ini mengembangkan interface yang dapat diiterasi dan diimplementasikan oleh semua kelas dalam kerangka kerja collection. Interface ini berisi semua method dasar yang dimiliki setiap collection, seperti menambahkan data ke dalam collection, menghapus data, menghapus semua data, dan sebagainya. Semua method ini diimplementasikan dalam interface ini karena method-method ini diimplementasikan oleh semua kelas tanpa memandang style implementasinya. Dengan memiliki method-method ini, interface memastikan bahwa nama-nama method tersebut berlaku universal untuk semua collection. Oleh karena itu, kita dapat mengatakan bahwa interface ini membangun dasar di mana kelas-kelas collection diimplementasikan.
+
+### 3. Interface List
+Interface ini adalah turunan dari interface collection. Interface ini memungkinkan data duplikat ada di dalamnya. Interface list ini diimplementasikan oleh berbagai kelas seperti ArrayList, LinkedList, Vector, dan lain-lain. Karena semua kelas turunan mengimplementasikan list, kita dapat membuat objek list dengan salah satu dari kelas-kelas ini.
+
+Contoh:
+
+```java
+List<T> al = new ArrayList<>();
+List<T> ll = new LinkedList<>();
+List<T> v = new Vector<>();
+```
+
+Di mana T adalah tipe generik. Artinya, tipe ini dapat digantikan oleh objek yang memenuhi syarat apa pun pada saat proses berjalan, misalnya objek Integer, String, dan sebagainya. Kelas-kelas yang mengimplementasikan interface List adalah sebagai berikut:
+
+#### a. ArrayList  
+ArrayList menyediakan array dinamis dalam Java. ArrayList berguna dalam program-program di mana banyak diperlukan manipulasi dalam array. Maka dari itu, ArrayList sering dipakai meskipun relatif lebih lambat dibanding array biasa. Ukuran ArrayList diperbesar secara otomatis jika collection bertambah atau menyusut jika objek dihapus dari collection. ArrayList Java memungkinkan kita untuk mengakses list secara acak. ArrayList tidak dapat digunakan untuk tipe data primitif seperti int, char, dll. Kita memerlukan wrapper classes untuk kasus-kasus tersebut (materi wrapper classes ada di bab 2 \[variabel dan tipe data\]).
+
+Contoh ArrayList:
+
+```java
+// Contoh ArrayList
+ArrayList<Integer> al = new ArrayList<Integer>();
+
+// Menambahkan elemen baru di akhir list
+for (int i = 1; i <= 5; i++)
+    al.add(i);
+
+// Menghapus elemen pada indeks 2
+al.remove(2);
+
+// Menampilkan ArrayList setelah penghapusan
+System.out.println(al);
+
+// Menampilkan elemen satu per satu
+for (int i = 0; i < al.size(); i++)
+    System.out.print(al.get(i) + " ");
+``` 
+
 #### b. LinkedList  
 Kelas LinkedList adalah salah satu cara untuk menyimpan dan mengatur data dalam bentuk rangkaian elemen yang saling terhubung. LinkedList menyimpan tiap elemen (disebut node) secara terpisah di memori.
 
