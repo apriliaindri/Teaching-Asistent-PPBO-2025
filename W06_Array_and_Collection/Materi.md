@@ -36,7 +36,7 @@ Interface ini adalah interface root untuk seluruh framework Collection. Interfac
 Iterator iterator();
 ```
 
-### 2. Interface `Collection`
+### 2. Interface Collection
 Interface ini mengembangkan interface yang dapat diiterasi dan diimplementasikan oleh semua kelas dalam kerangka kerja collection. Interface ini berisi semua method dasar yang dimiliki setiap collection, seperti menambahkan data ke dalam collection, menghapus data, menghapus semua data, dan sebagainya. Semua method ini diimplementasikan dalam interface ini karena method-method ini diimplementasikan oleh semua kelas tanpa memandang style implementasinya. Dengan memiliki method-method ini, interface memastikan bahwa nama-nama method tersebut berlaku universal untuk semua collection. Oleh karena itu, kita dapat mengatakan bahwa interface ini membangun dasar di mana kelas-kelas collection diimplementasikan.
 
 ### 3. Interface List
