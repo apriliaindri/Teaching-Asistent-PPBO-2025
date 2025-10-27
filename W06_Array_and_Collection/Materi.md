@@ -286,3 +286,121 @@ Set<T> hs = new HashSet<>();
 Set<T> lhs = new LinkedHashSet<>(); 
 Set<T> ts = new TreeSet<>();
 ```
+
+Kelas-kelas berikut mengimplementasikan antarmuka Set:
+
+#### a. HashSet
+Kelas HashSet adalah implementasi bawaan dari struktur data tabel hash. Objek yang kita masukkan ke HashSet tidak menjamin akan dimasukkan dalam urutan yang sama. Objek dimasukkan berdasarkan kode hash mereka. Kelas ini juga memungkinkan penambahan elemen NULL. Mari pahami HashSet dengan contoh berikut:
+
+```java
+
+HashSet<String> hs = new HashSet<String>();
+
+hs.add("FSRD");
+hs.add("FKIP");
+hs.add("FH");
+hs.add("FEB");
+hs.add("FATISDA");
+
+// Melakukan traverse elemen
+Iterator<String> itr = hs.iterator();
+while (itr.hasNext()) {
+    System.out.println(itr.next());
+}
+```
+
+#### b. LinkedHashSet
+LinkedHashSet sangat mirip dengan HashSet. Perbedaannya adalah LinkedHashSet menggunakan double linked list untuk menyimpan data dan mempertahankan urutan elemen.
+
+Mari pahami LinkedHashSet dengan contoh berikut:
+
+```java
+LinkedHashSet<String> lhs = new LinkedHashSet<String>();
+
+lhs.add("FSRD");
+lhs.add("FKIP");
+lhs.add("FH");
+lhs.add("FEB");
+lhs.add("FATISDA");
+
+// Melakukan traverse elemen
+Iterator<String> itr = lhs.iterator();
+while (itr.hasNext()) {
+    System.out.println(itr.next());
+}
+```
+
+### 7. Interface Sorted Set
+Interface ini mirip dengan interface Set. Satu-satunya perbedaan adalah antarmuka ini adalah SortedSet bersifat urut. Interface sorted set meng-extend interface set dan digunakan untuk mengelola data yang perlu diurutkan. Kelas yang mengimplementasikan antarmuka ini adalah TreeSet. Karena kelas ini mengimplementasikan SortedSet, kita dapat membuat objek SortedSet dengan kelas ini.
+
+Contohnya:
+
+```java
+SortedSet<T> ts = new TreeSet<>(); 
+```
+
+Di mana T adalah tipe objek.
+
+#### a. TreeSet
+Kelas TreeSet menggunakan struktur Pohon untuk penyimpanan. Urutan elemen dipertahankan oleh set menggunakan urutan alami mereka. TreeSet dapat diatur agar mengurutkan elemen sesuai dengan aturan tertentu yang ditentukan oleh objek Comparator, dan untuk menjalankannya dengan benar sebagai kumpulan objek unik, elemen-elemen tersebut harus mengimplementasikan metode equals dengan benar.
+
+Mari pahami TreeSet dengan contoh:
+
+```java
+
+TreeSet<String> ts = new TreeSet<String>();
+
+ts.add("FSRD");
+ts.add("FKIP");
+ts.add("FH");
+ts.add("FEB");
+ts.add("FATISDA");
+
+// Melakukan traverse elemen
+Iterator<String> itr = ts.iterator();
+while (itr.hasNext()) {
+    System.out.println(itr.next());
+}
+```
+
+### 7. Interface Map
+Interface Map adalah struktur data yang mendukung pasangan key-value untuk memetakan data. Interface ini tidak memungkinkan duplikasi key karena kunci (key) yang sama tidak dapat memiliki beberapa map/pemetaan, namun value suatu key boleh sama dengan value di key lainnya. Interface map ini diimplementasikan oleh berbagai kelas seperti HashMap, TreeMap, dan lain-lain. Karena semua kelas turunan mengimplementasikan antarmuka map, kita dapat membuat objek map dengan salah satu dari kelas-kelas ini.
+
+Contoh:
+
+```java
+Map<T> hm = new HashMap<>(); 
+Map<T> tm = new TreeMap<>();
+```
+
+Di mana T adalah jenis objek. Implementasi Antarmuka Map yang sering digunakan adalah HashMap.
+
+#### a. HashMap
+HashMap menyediakan implementasi dasar dari Antarmuka Map Java. Objek ini menyimpan data dalam pasangan (Kunci, Nilai). Untuk mengakses nilai dalam HashMap, kita harus tahu kuncinya. HashMap menggunakan teknik yang disebut Hashing. Hashing adalah teknik mengonversi String besar menjadi String kecil yang mewakili String yang sama sehingga operasi indeks dan pencarian lebih cepat. HashSet juga menggunakan HashMap secara internal.
+
+Mari pahami HashMap dengan contoh:
+
+```java
+// Membuat HashMap dan menambahkan elemen
+HashMap<Integer, String> hm = new HashMap<Integer, String>();
+
+hm.put(1, "Lu punya uang");
+hm.put(2, "Lu punya kuasa");
+
+// Menemukan nilai untuk sebuah kunci
+System.out.println("Nilai untuk kunci 1 adalah " + hm.get(1));
+
+// Melintasi HashMap
+for (Map.Entry<Integer, String> e : hm.entrySet())
+    System.out.println(e.getKey() + " " + e.getValue());
+```
+
+# Bacaan Lebih Lanjut
+**Array:**  
+- [Java Arrays (w3schools.com)](https://www.w3schools.com/java/java_arrays.asp)  
+- [Arrays (Java Platform SE 8 ) (oracle.com)](https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html)  
+
+**Collection**:
+- [Collections in Java - javatpoint](https://www.javatpoint.com/collections-in-java)  
+- [Collection (Java Platform SE 8 ) (oracle.com)](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html)  
+
