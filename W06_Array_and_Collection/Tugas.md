@@ -10,7 +10,7 @@ Buatlah program Java yang menerapkan Array dan Collection Framework untuk mengel
 2. **Gunakan Array** untuk:
    - Menyimpan data beberapa mahasiswa (NIM, Nama, Nilai) secara statis.
    - Menampilkan seluruh data mahasiswa dari array tersebut.
-3. **Gunakan Collection FRamework** untuk:
+3. **Gunakan Collection Framework** untuk:
    - **ArrayList:** untuk menambahkan, menampilkan, dan menghapus data mahasiswa secara dinamis.  
      - Tambahkan minimal 3 data mahasiswa ke dalam `ArrayList`.
      - Hapus satu data berdasarkan NIM.
