@@ -892,20 +892,56 @@ Kelas TreeSet menggunakan struktur Pohon untuk penyimpanan. Urutan elemen dipert
 Mari pahami TreeSet dengan contoh:
 
 ```java
+import java.util.SortedSet;
+import java.util.TreeSet;
+import java.util.Iterator;
 
-TreeSet<String> ts = new TreeSet<String>();
+public class ContohSortedSet {
+    public static void main(String[] args) {
 
-ts.add("FSRD");
-ts.add("FKIP");
-ts.add("FH");
-ts.add("FEB");
-ts.add("FATISDA");
+        System.out.println("Contoh SortedSet dengan TreeSet");
 
-// Melakukan traverse elemen
-Iterator<String> itr = ts.iterator();
-while (itr.hasNext()) {
-    System.out.println(itr.next());
+        // Membuat objek TreeSet yang mengimplementasikan SortedSet
+        SortedSet<String> ts = new TreeSet<String>();
+
+        // Menambahkan elemen-elemen ke TreeSet
+        ts.add("FSRD");
+        ts.add("FKIP");
+        ts.add("FH");
+        ts.add("FEB");
+        ts.add("FATISDA");
+
+        // Menampilkan elemen-elemen dalam TreeSet menggunakan Iterator
+        // Atau dapat diganti dengan menggunakan Comparator 
+        System.out.println("Isi TreeSet (otomatis urut):");
+        Iterator<String> itr = ts.iterator();
+        while (itr.hasNext()) {
+            System.out.println(itr.next());
+        }
+
+        // Menampilkan elemen pertama dan terakhir (karena TreeSet urut)
+        System.out.println("\nElemen pertama (first): " + ((TreeSet<String>) ts).first());
+        System.out.println("Elemen terakhir (last): " + ((TreeSet<String>) ts).last());
+    }
 }
+```
+
+atau jika ingin mengguakan urutan terbalik dapat menggunakan Comparator, sebagai berikut: 
+```java 
+SortedSet<String> ts = new TreeSet<String>((a, b) -> b.compareTo(a));
+```
+
+Output: 
+```java
+Isi TreeSet (otomatis urut):
+FATISDA
+FEB
+FH
+FKIP
+FSRD
+
+Elemen pertama (first): FATISDA
+Elemen terakhir (last): FSRD
 ```
 
 ### 7. Interface Map
