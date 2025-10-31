@@ -578,6 +578,107 @@ while (itr.hasNext()) {
 }
 ```
 
+Contoh source code Interface List: 
+```java 
+import java.util.*; 
+
+public class InterfaceList {
+    public static void main(String[] args) {
+        System.out.println("- ArrayList -");
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
+
+        // Menambahkan elemen baru di akhir list
+        for (int i = 1; i <= 5; i++) {
+            arrayList.add(i);
+        }
+
+        // Menghapus elemen pada indeks ke-2
+        arrayList.remove(2);
+
+        // Menampilkan isi ArrayList
+        System.out.println("Isi ArrayList: " + arrayList);
+
+        // Menampilkan elemen satu per satu
+        System.out.print("Elemen: ");
+        for (int i = 0; i < arrayList.size(); i++) {
+            System.out.print(arrayList.get(i) + " ");
+        }
+        System.out.println("\n");
+
+        System.out.println("- LinkedList -");
+        LinkedList<Integer> linkedList = new LinkedList<Integer>();
+        
+        linkedList.add(10);
+        linkedList.add(15);
+        linkedList.add(20);
+
+        // Menghapus elemen pada indeks ke-3
+        linkedList.remove(2);
+
+        // Menampilkan isi LinkedList
+        System.out.println("Isi LinkedList: " + linkedList);
+
+        // Menampilkan elemen satu per satu
+        System.out.print("Elemen: ");
+        for (int i = 0; i < linkedList.size(); i++) {
+            System.out.print(linkedList.get(i) + " ");
+        }
+        System.out.println("\n");
+
+        // Cara lain menghapus dengan nilai langsung
+        linkedList.remove(Integer.valueOf(20));
+        System.out.println("Setelah remove(20): " + linkedList + "\n");
+
+        System.out.println("- Vector -");
+        Vector<Integer> vector = new Vector<Integer>();
+
+        // Menambahkan elemen baru
+        for (int i = 1; i <= 5; i++) {
+            vector.add(i);
+        }
+
+        // Menghapus elemen pada indeks ke-3
+        vector.remove(3);
+
+        // Menampilkan isi Vector
+        System.out.println("Isi Vector: " + vector);
+
+        // Menampilkan elemen satu per satu
+        System.out.print("Elemen: ");
+        for (int i = 0; i < vector.size(); i++) {
+            System.out.print(vector.get(i) + " ");
+        }
+        System.out.println("\n");
+
+        System.out.println("- Stack -");
+        Stack<String> stack = new Stack<String>();
+        stack.push("FATISDA");
+        stack.push("FMIPA");
+        stack.push("FP");
+        stack.push("FKIP");
+
+        // Iterator untuk menampilkan isi Stack
+        Iterator<String> itr = stack.iterator();
+        System.out.print("Isi Stack: ");
+        while (itr.hasNext()) {
+            System.out.print(itr.next() + " ");
+        }
+        System.out.println();
+
+        // Operasi pop (menghapus elemen paling atas)
+        stack.pop();
+
+        // Menampilkan kembali isi Stack setelah pop
+        itr = stack.iterator();
+        System.out.print("Setelah pop: ");
+        while (itr.hasNext()) {
+            System.out.print(itr.next() + " ");
+        }
+
+    }
+}
+```
+
 ### 4. Interface Queue
 Seperti namanya, interface queue menjaga urutan FIFO (First In First Out) seperti antrean di dunia nyata. Interface ini digunakan untuk menyimpan semua elemen di mana urutan elemen dianggap penting. Misalnya, ketika kita mencoba memesan tiket, tiket dijual berdasarkan prinsip first come first serve. Oleh karena itu, orang yang tiba pertama kali dalam queue akan mendapatkan tiket terlebih dahulu. Kita dapat membuat objek queue dengan salah satu dari kelas-kelas ini karena semua kelas turunan ini mengimplementasikan interface queue.
 
@@ -596,28 +697,43 @@ PriorityQueue digunakan ketika objek harus diproses berdasarkan prioritas. Meski
 Contoh:
 
 ```java
-PriorityQueue<Integer> pQueue = new PriorityQueue<Integer>();
+import java.util.PriorityQueue;
 
-pQueue.add(10);
-pQueue.add(20);
-pQueue.add(15);
+public class QueuePriority {
+    public static void main(String[] args) {
 
-// Mencetak elemen teratas
-System.out.println(pQueue.peek());
+        System.out.println("=== Contoh PriorityQueue (String) ===");
 
-// Mencetak elemen teratas lalu menghapusnya dari container PriorityQueue
-System.out.println(pQueue.poll());
+        // Membuat PriorityQueue tipe String
+        PriorityQueue<String> pQueue = new PriorityQueue<String>();
 
-// Mencetak elemen teratas
-System.out.println(pQueue.peek());
+        // Menambahkan elemen ke PriorityQueue
+        pQueue.add("Nama");
+        pQueue.add("Halo");
+        pQueue.add("Saya");
+    
+        // Melihat elemen dengan prioritas tertinggi (tanpa menghapus)
+        System.out.println("Elemen teratas (peek): " + pQueue.peek());
+
+        // Menghapus dan menampilkan elemen dengan prioritas tertinggi
+        System.out.println("Elemen yang dihapus (poll): " + pQueue.poll());
+
+        // Menampilkan elemen teratas setelah penghapusan
+        System.out.println("Elemen teratas sekarang (peek): " + pQueue.peek());
+
+        // Menampilkan semua elemen yang tersisa di PriorityQueue
+        System.out.println("Isi PriorityQueue sekarang: " + pQueue);
+    }
+}
 ```
 
 Output:
 
 ```
-10
-10
-15
+Elemen teratas (peek): Halo
+Elemen yang dihapus (poll): Halo
+Elemen teratas sekarang (peek): Nama
+Isi PriorityQueue sekarang: [Nama, Saya]
 ```
 
 ### 5. Interface Deque
@@ -637,36 +753,72 @@ Kelas ArrayDeque yang merupakan bagian dari Java Collection Framework yang menye
 Mari kita pahami ArrayDeque dengan contoh:
 
 ```java
+import java.util.ArrayDeque;
+import java.util.Deque;
 
-ArrayDeque<Integer> deQueue = new ArrayDeque<Integer>(10);
+public class ContohArrayDeque {
+    public static void main(String[] args) {
+        // Membuat deque dengan kapasitas awal 10
+        Deque<Integer> deQueue = new ArrayDeque<Integer>(10);
 
-deQueue.add(10);
-deQueue.add(20);
-deQueue.add(30);
-deQueue.add(40);
-deQueue.add(50);
+        // Menambah elemen ke deque (otomatis ke bagian belakang)
+        deQueue.add(10);
+        deQueue.add(20);
+        deQueue.add(30);
+        deQueue.add(40);
+        deQueue.add(50);
 
-System.out.println(deQueue);
+        // Menampilkan isi deque
+        System.out.println("Isi deque awal:");
+        System.out.println(deQueue);
 
-// menghapus semua elemen
-deQueue.clear();
+        // Menghapus semua elemen dari deque
+        deQueue.clear();
+        System.out.println("\nSetelah clear(), deque menjadi kosong: " + deQueue);
 
-// menambah elemen pada head (depan)
-deQueue.addFirst(564);
-deQueue.addFirst(291);
+        // Menambah elemen ke depan (head)
+        deQueue.addFirst(564);
+        deQueue.addFirst(291);
 
-// menambah elemen pada tail (belakang)
-deQueue.addLast(24);
-deQueue.addLast(14);
+        // Menambah elemen ke belakang (tail)
+        deQueue.addLast(24);
+        deQueue.addLast(14);
 
-System.out.println(deQueue);
+        // Menampilkan isi deque setelah penambahan elemen di kedua sisi
+        System.out.println("\nIsi deque setelah menambah elemen di depan dan belakang:");
+        System.out.println(deQueue);
+
+        // Menghapus elemen dari depan
+        deQueue.removeFirst();
+        System.out.println("\nSetelah removeFirst(): " + deQueue);
+
+        // Menghapus elemen dari belakang
+        deQueue.removeLast();
+        System.out.println("Setelah removeLast(): " + deQueue);
+
+        // Melihat elemen tanpa menghapusnya
+        System.out.println("\nElemen pertama (peekFirst): " + deQueue.peekFirst());
+        System.out.println("Elemen terakhir (peekLast): " + deQueue.peekLast());
+    }
+}
 ```
 
 Output:
 
 ```
+Isi deque awal:
 [10, 20, 30, 40, 50]
+
+Setelah clear(), deque menjadi kosong: []
+
+Isi deque setelah menambah elemen di depan dan belakang:  
 [291, 564, 24, 14]
+
+Setelah removeFirst(): [564, 24, 14]
+Setelah removeLast(): [564, 24]
+
+Elemen pertama (peekFirst): 564
+Elemen terakhir (peekLast): 24
 ```
 
 ### 6. Interface Set
