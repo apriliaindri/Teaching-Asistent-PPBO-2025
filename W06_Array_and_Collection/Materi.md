@@ -932,7 +932,8 @@ SortedSet<String> ts = new TreeSet<String>((a, b) -> b.compareTo(a));
 ```
 
 Output: 
-```java
+```
+Contoh SortedSet dengan TreeSet
 Isi TreeSet (otomatis urut):
 FATISDA
 FEB
@@ -962,20 +963,66 @@ HashMap menyediakan implementasi dasar dari Antarmuka Map Java. Objek ini menyim
 Mari pahami HashMap dengan contoh:
 
 ```java
-// Membuat HashMap dan menambahkan elemen
-HashMap<Integer, String> hm = new HashMap<Integer, String>();
+import java.util.HashMap;
+import java.util.Map;
 
-hm.put(1, "Bangga");
-hm.put(2, "Pada");
-hm.put(3, "Tiap");
-hm.put(4, "Proses");
+public class ContohHashMap {
+    public static void main(String[] args) {
 
-// Menemukan nilai untuk sebuah kunci
-System.out.println("Nilai untuk kunci 1 adalah " + hm.get(1));
+        System.out.println("Contoh HashMap");
 
-// Melintasi HashMap
-for (Map.Entry<Integer, String> e : hm.entrySet())
-    System.out.println(e.getKey() + " " + e.getValue());
+        // Membuat objek HashMap dengan pasangan Key (Integer) dan Value (String)
+        HashMap<Integer, String> hm = new HashMap<Integer, String>();
+
+        // Menambahkan elemen ke dalam HashMap menggunakan put()
+        hm.put(1, "Bangga");
+        hm.put(2, "Pada");
+        hm.put(3, "Tiap");
+        hm.put(4, "Proses");
+
+        // Menampilkan seluruh isi HashMap
+        System.out.println("Isi HashMap: " + hm);
+
+        // Mengambil nilai berdasarkan key
+        System.out.println("\nNilai untuk kunci 1 adalah: " + hm.get(1));
+
+        // Menghapus elemen berdasarkan key
+        hm.remove(4);
+
+        // Menampilkan isi HashMap setelah penghapusan
+        System.out.println("\nSetelah menghapus kunci 4:");
+        System.out.println(hm);
+
+        // Melintasi HashMap menggunakan entrySet()
+        System.out.println("\nMenelusuri setiap pasangan (Key -> Value) pada HashMap:");
+        for (Map.Entry<Integer, String> entry : hm.entrySet()) {
+            System.out.println(entry.getKey() + " -> " + entry.getValue());
+        }
+
+        // Menampilkan semua key dan value secara terpisah
+        System.out.println("\nDaftar Key: " + hm.keySet());
+        System.out.println("Daftar Value: " + hm.values());
+    }
+}
+```
+
+Output: 
+```
+Contoh HashMap
+Isi HashMap: {1=Bangga, 2=Pada, 3=Tiap, 4=Proses}
+
+Nilai untuk kunci 1 adalah: Bangga
+
+Setelah menghapus kunci 4:
+{1=Bangga, 2=Pada, 3=Tiap}
+
+Menelusuri setiap pasangan (Key -> Value) pada HashMap:
+1 -> Bangga
+2 -> Pada
+3 -> Tiap
+
+Daftar Key: [1, 2, 3]
+Daftar Value: [Bangga, Pada, Tiap]
 ```
 
 # Bacaan Lebih Lanjut
