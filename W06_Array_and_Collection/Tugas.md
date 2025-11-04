@@ -2,7 +2,7 @@
 
 ## Ketentuan Tugas
 
-Buatlah program Java yang menerapkan Array dan Collection Framework untuk mengelola data mahasiswa. Program harus dapat melakukan operasi dasar pengolahan data menggunakan array dan berbagai jenis collection (ArrayList, LinkedList, HashSet, dan HashMap).
+Buatlah program Java yang menerapkan Array dan Collection Framework untuk mengelola data mahasiswa. Program harus dapat melakukan operasi dasar pengolahan data menggunakan array dan berbagai jenis collection (ArrayList, HashSet, dan HashMap).
 
 ### Kriteria Program
 
@@ -19,7 +19,9 @@ Buatlah program Java yang menerapkan Array dan Collection Framework untuk mengel
    - **HashMap:** untuk memetakan **NIM sebagai key** dan **Nilai sebagai value.**
      - Tambahkan minimal 3 pasangan data (NIM, Nilai).
      - Tampilkan seluruh data dan nilai rata-rata dari semua mahasiswa.
-4. **Fitur Tambahan (Opsional untuk nilai plus):** Gunakan **Collections.sort()** untuk mengurutkan data berdasarkan nama atau nilai.
+4. **Fitur Tambahan (Opsional untuk nilai plus):**
+   - Gunakan **Collections.sort()** untuk mengurutkan data berdasarkan nama atau nilai.
+   - Gunakan LinkedList untuk pengelolaan data mahasiswa secara dinamis.
 
 Dengan isi file sebagai berikut:
 ```java
