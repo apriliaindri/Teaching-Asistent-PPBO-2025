@@ -75,3 +75,30 @@ Superclass constructor
 Subclass constructor with two parameters
 ```
 Dapat dilihat pada contoh di atas, apabila **constructor** pada **subclass** tidak mem-spesifikkan **constructor** mana yang akan dipanggil pada **superclass**, maka **constructor** tanpa parameter akan dipanggil secara **otomatis**. Apabila **constructor** pada **class** mem-spesifikkan **constructor** mana yang akan dipanggil, maka **constructor** yang dipanggil adalah **constructor** yang dispesifikkan. Untuk mem-spesisfikkan **constructor** mana yang akan dipanggil, kita dapat menggunakan **super keyword** diikuti dengan **parameter** yang sesuai dengan **constructor** yang ingin dipanggil.
+
+Contoh **yang salah**:
+```java
+class Superclass {
+    public Superclass(int a) {
+        System.out.println("Superclass constructor with parameter, a value: " + a);
+    }
+}
+
+class Subclass extends Superclass{
+    public Subclass(int a) {
+        System.out.println("Subclass constructor with an int parameter");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Subclass subclass = new Subclass(10);
+    }
+}
+```
+Output:
+```java
+ERROR!
+```
+Hal ini terjadi karena **constructor** pada **subclass** mencoba memanggil **constructor** pada **superclass** tanpa parameter, yang mana **tidak ada**.
+
