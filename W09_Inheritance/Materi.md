@@ -102,3 +102,108 @@ ERROR!
 ```
 Hal ini terjadi karena **constructor** pada **subclass** mencoba memanggil **constructor** pada **superclass** tanpa parameter, yang mana **tidak ada**.
 
+## Destructor
+**Destructor** adalah **method** yang digunakan untuk menghapus **properties** dari sebuah class. Walaupun pada bahasa Java tidak terdapat **destructor**, namun kita dapat menggunakan **finalize()** untuk menggantikan **destructor**.
+
+Dalam **inheritance**, **subclass** akan memanggil **destructor** dari **subclass** terlebih dahulu sebelum menghapus **properties** dari **superclass**. **Destructor** tidak dapat dipanggil secara langsung, **destructor** akan dipanggil secara **otomatis** ketika sebuah objek dihapus dari memori. Berikut contoh penggunaan **destructor** di **inheritance**.
+```java
+class Superclass {
+    public Superclass() {
+        System.out.println("Superclass constructor");
+    }
+
+    public void finalize() {
+        System.out.println("Superclass destructor");
+    }
+}
+
+class Subclass extends Superclass {
+    public Subclass() {
+        System.out.println("Subclass constructor");
+    }
+
+    public void finalize() {
+        System.out.println("Subclass destructor");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Subclass subclass = new Subclass();
+        subclass = null;
+        System.gc(); // Call garbage collector
+    }
+}
+```
+Output dari contoh di atas adalah indeterministic,karena **garbage collector** bisa saja **tidak langsung** menghapus objek dari memori. Berikut adalah outputnya apabila **garbage collector** langsung menghapus objek dari memori.
+```java
+Superclass constructor
+Subclass constructor
+Subclass destructor
+Superclass destructor
+```
+
+## An Example of Using the Static Keyword in the Context of Inheritance
+**Static keyword** adalah keyword yang digunakan untuk membuat **properties** dan **methods** yang dapat diakses tanpa harus membuat objek terlebih dahulu, dan membuat **properties** dan **methods** menjadi terikat kepada **class** bukan **objek**. Berikut contoh penggunaan **static keyword** dalam konsep **inheritance**.
+```java
+class Animal {
+    static int numberOfAnimals = 0;
+    String name;
+
+    public Animal(String name) {
+        this.name = name;
+        numberOfAnimals++;
+    }
+
+    public void animalInfo() {
+        System.out.println("Animal: " + name);
+    }
+}
+
+class Dog extends Animal {
+    public Dog(String name) {
+        super(name);
+    }
+}
+
+class Cat extends Animal {
+    public Cat(String name) {
+        super(name);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog1 = new Dog("Buddy");
+        dog1.animalInfo();
+        Dog dog2 = new Dog("Max");
+        dog2.animalInfo();
+        Cat cat1 = new Cat("Whiskers");
+        cat1.animalInfo();
+
+        System.out.println("Total number of animals: " + Animal.numberOfAnimals);
+    }
+}
+
+```
+Output:
+```java
+Animal: Buddy
+Animal: Max
+Animal: Whiskers
+Total number of animals: 3
+```
+
+# Bacaan
+- [Inheritance](https://www.w3schools.com/java/java_inheritance.asp)
+- [Java Inheritance](https://www.geeksforgeeks.org/inheritance-in-java/)
+- [Java Inheritance (Tutorials Point)](https://www.tutorialspoint.com/java/java_inheritance.htm)
+- [Java Inheritance (Javatpoint)](https://www.javatpoint.com/inheritance-in-java)
+- [Java Super Keyword](https://www.w3schools.com/java/ref_keyword_super.asp)
+- [Java Super Keyword (Javatpoint)](https://www.javatpoint.com/super-keyword)
+- [Java Final Keyword (Javatpoint)](https://www.javatpoint.com/final-keyword)
+- [Java Static Keyword (Javatpoint)](https://www.javatpoint.com/static-keyword-in-java)
+- [Java Constructor](https://www.w3schools.com/java/java_constructors.asp)
+- [Java Constructor (Javatpoint)](https://www.javatpoint.com/java-constructor)
+- [Belajar Java: Inheritance](https://www.petanikode.com/java-oop-inheritance/)
+
