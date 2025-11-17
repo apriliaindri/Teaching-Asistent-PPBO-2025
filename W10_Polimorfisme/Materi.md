@@ -56,6 +56,77 @@ public class Main {
 - Kelas Calculator memiliki tiga metode add dengan nama yang sama tetapi berbeda dalam parameter.
 - Saat kita membuat objek calculator dan memanggil method `add`, Java akan memilih parameter yang cocok berdasarkan inputnya.
 
+### Operator Polymorphism  
+Meskipun Java tidak mendukung operator overloading secara langsung, beberapa operator dapat digunakan secara berbeda tergantung pada tipe data, menciptakan operator polymorphism.
+
+Contoh kode:
+```java
+public class OperatorOverloading {
+    public static void main(String[] args) {
+        int num1 = 5;
+        int num2 = 10;
+        String str1 = "Hello";
+        String str2 = "World";
+
+        int sumInt = num1 + num2;          // Operator + untuk penjumlahan int
+        String concatStr = str1 + str2;    // Operator + untuk penggabungan String
+    }
+}
+```
+**Penjelasan:**
+Operator `+` memiliki perilaku yang berbeda tergantung pada tipe data yang digunakan. Jika tipe datanya adalah String, operator `+` berguna untuk menggabungkan String. Apabila tipe datanya int, operator `+` berguna untuk menjumlahkan nilai bilangan bulat.
+
+## Runtime Polymorphism  
+Runtime polymorphism adalah polimorfisme yang terjadi saat program sedang berjalan (runtime). Runtime berarti fase ketika program benar-benar dieksekusi, dan komputer menjalankan instruksi-instruksi program.
+Pada runtime polymorphism, yang digunakan adalah **method overriding**, yaitu ketika kelas anak (subclass) membuat versi baru dari metode yang sudah ada di kelas induk (superclass).
+Metode mana yang dipanggil baru diputuskan saat program berjalan, tergantung pada objek sebenarnya yang digunakan.
+Karena alasan ini, runtime polymorphism juga disebut Dynamic Method Dispatch (DMD).
+Satu-satunya metode yang bisa menggunakan runtime polymorphism adalah **virtual method.**
+
+### Virtual Method  
+Pada Java, semua metode dianggap virtual secara default, yang berarti mereka dapat di-override oleh kelas turunan. Dalam konteks runtime polymorphism, virtual method memungkinkan pemanggilan metode yang sesuai dengan objek sebenarnya yang sedang diakses pada saat runtime.
+Jenis polimorfisme ini disebut dengan Metode Overriding. Hal ini terjadi ketika subclass memberikan implementasi yang berbeda untuk metode yang sudah dideklarasikan di superclass. Method dasar tersebut dikatakan telah di-override.  
+
+Contoh kode:
+```java
+class Animal {
+    // Virtual method
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Wolf extends Animal {
+    // Override virtual method
+    @Override
+    void makeSound() {
+        System.out.println("Wolf roars");
+    }
+}
+
+class Cat extends Animal {
+    // Override virtual method
+    @Override
+    void makeSound() {
+        System.out.println("Cat meows");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myWolf = new Wolf();
+        Animal myCat = new Cat();
+
+        // Virtual method calls
+        myWolf.makeSound();  // Output: Wolf roars
+        myCat.makeSound();  // Output: Cat meows
+    }
+}
+```  
+**Penjelasan:**
+Dalam contoh ini, metode makeSound pada kelas Animal dianggap sebagai virtual karena dapat di-override oleh kelas turunan. Saat objek dibuat menggunakan tipe data superclass (Animal), tetapi diinisialisasi dengan objek dari kelas turunan (Wolf dan Cat), metode yang dipanggil selama runtime adalah versi yang di-override oleh kelas turunan tersebut. Ini menunjukkan bagaimana virtual method mendukung runtime polymorphism dalam Java.  
+
+
 ## Contoh Penerapan Polimorfisme
 
 ### 1. Overloading dan Overriding pada Pewarisan
