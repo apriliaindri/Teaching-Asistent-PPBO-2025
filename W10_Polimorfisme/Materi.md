@@ -1,15 +1,19 @@
-# Polimorfisme  
+# Polimorfisme
+
 Kata "polimorfisme" berasal dari bahasa Yunani, di mana "poly" berarti banyak, dan "morphe" berarti bentuk. Jadi, secara harfiah, "polimorfisme" berarti memiliki banyak bentuk. Dalam konteks pemrograman, konsep polimorfisme mengacu pada kemampuan suatu objek untuk memiliki banyak tampilan atau perilaku, sesuai dengan konteks atau jenisnya. Polimorfisme menjadi konsep penting dalam pemrograman berorientasi objek yang memungkinkan objek dari kelas yang berbeda untuk diakses dan digunakan melalui antarmuka yang sama. Sederhananya, ini berarti kita dapat menggunakan suatu antarmuka atau kelas dasar untuk mengakses objek-objek yang mungkin memiliki implementasi yang berbeda. Dalam Java, polimorfisme dapat diimplementasikan pada tingkat kompilasi (compile time) dan pada tingkat runtime (runtime), memberikan fleksibilitas dan kemampuan untuk menangani berbagai tipe objek.
 
 ![Diagram Polimorfisme](https://github.com/apriliaindri/PBO-2023/blob/main/W10_Polimorfisme/diagram.jpg)
 
-## Compile Time Polymorphism  
+## Compile Time Polymorphism
+
 Compile time polymorphism terjadi pada saat kompilasi program. Hal ini mencakup dua konsep utama: method overloading dan operator polymorphism. Saat program dikompilasi, kompiler menentukan metode atau operator mana yang harus dipanggil berdasarkan jumlah dan tipe parameter atau tipe operand yang digunakan.
 
-### Method Overloading  
+### Method Overloading
+
 Method overloading adalah bentuk polimorfisme pada tingkat kompilasi yang memungkinkan penggunaan beberapa metode dengan nama yang sama dalam satu kelas, tetapi dengan parameter yang berbeda.
 
 Contoh kode:
+
 ```java
 class Calculator {
     // Method untuk menambahkan dua angka integer
@@ -41,9 +45,9 @@ public class Main {
 ```
 
 **Penjelasan:**
+
 - Kelas Calculator memiliki tiga metode add dengan nama yang sama tetapi berbeda dalam parameter.
 - Saat objek calculator dibuat, kita dapat memanggil metode add dengan parameter yang sesuai.
-
 
 ## Contoh Penerapan Polimorfisme
 
@@ -71,7 +75,7 @@ class AdvancedMathOperation extends MathOperation {
 public class Main {
     public static void main(String[] args) {
         AdvancedMathOperation math = new AdvancedMathOperation();
-        
+
         System.out.println(math.add(2, 3));         // Memanggil metode add(int, int) dari superclass
         System.out.println(math.add(2.5, 3.5));     // Memanggil metode add(double, double) dari superclass
         System.out.println(math.add(2, 3, 4));      // Memanggil metode add(int, int, int) dari subclass
@@ -80,8 +84,9 @@ public class Main {
 ```
 
 **Penjelasan:**
-- Kelas `MathOperation` memiliki dua metode `add` yang di-*overload* dengan jumlah dan tipe parameter yang berbeda.
-- Kelas `AdvancedMathOperation` mewarisi dari `MathOperation` dan menambahkan metode `add` baru yang di-*overload*.
+
+- Kelas `MathOperation` memiliki dua metode `add` yang di-_overload_ dengan jumlah dan tipe parameter yang berbeda.
+- Kelas `AdvancedMathOperation` mewarisi dari `MathOperation` dan menambahkan metode `add` baru yang di-_overload_.
 
 #### b. Overriding pada Pewarisan:
 
@@ -108,7 +113,8 @@ public class Main {
 ```
 
 **Penjelasan:**
-- Kelas `Wolf` *mengoverride* metode `makeSound` dari kelas induk `Animal`.
+
+- Kelas `Wolf` _mengoverride_ metode `makeSound` dari kelas induk `Animal`.
 - Saat objek `myPet` dari tipe `Animal` diinisialisasi dengan objek `Wolf`, pemanggilan metode `makeSound` menghasilkan output yang sesuai dengan metode di kelas turunan (`Wolf`).
 
 ### 2. Overloading dan Overriding pada Interface
@@ -144,8 +150,9 @@ public class Main {
 ```
 
 **Penjelasan:**
-- *Interface* `Shape` memiliki dua metode `draw`, satu tanpa parameter dan satu dengan parameter `color`.
-- Kelas `Circle` mengimplementasikan *interface* `Shape` dan memberikan implementasi untuk kedua metode `draw`.
+
+- _Interface_ `Shape` memiliki dua metode `draw`, satu tanpa parameter dan satu dengan parameter `color`.
+- Kelas `Circle` mengimplementasikan _interface_ `Shape` dan memberikan implementasi untuk kedua metode `draw`.
 
 #### b. Overriding pada Interface:
 
@@ -170,8 +177,9 @@ public class Main {
 ```
 
 **Penjelasan:**
-- *Interface* `Animal` memiliki metode `makeSound`.
-- Kelas `Wolf` mengimplementasikan *interface* `Animal` dan memberikan implementasi untuk metode `makeSound`.
+
+- _Interface_ `Animal` memiliki metode `makeSound`.
+- Kelas `Wolf` mengimplementasikan _interface_ `Animal` dan memberikan implementasi untuk metode `makeSound`.
 
 ### 3. Overloading dan Overriding pada Abstract Class
 
@@ -203,7 +211,8 @@ public class Main {
 ```
 
 **Penjelasan:**
-- Kelas abstrak `Shape` memiliki metode abstrak `draw` dan metode `draw` yang di-*overload*.
+
+- Kelas abstrak `Shape` memiliki metode abstrak `draw` dan metode `draw` yang di-_overload_.
 - Kelas `Circle` mengextends dari `Shape` dan memberikan implementasi untuk metode `draw`.
 
 #### b. Overriding pada Abstract Class:
@@ -229,12 +238,14 @@ public class Main {
 ```
 
 **Penjelasan:**
+
 - Kelas abstrak `Animal` memiliki metode abstrak `makeSound`.
 - Kelas `Wolf` mengextends dari `Animal` dan memberikan implementasi untuk metode `makeSound`.
 
 ### 4. Contoh Lain
 
-#### 1. Operator Overloading (Ad-Hoc Polymorphism)  
+#### 1. Operator Overloading (Ad-Hoc Polymorphism)
+
 Ad-Hoc Polymorphism adalah teknik yang digunakan untuk mendefinisikan method yang sama dengan implementasi berbeda dan argumen berbeda.
 
 **Operator Overloading untuk Bilangan Kompleks:**
@@ -267,10 +278,12 @@ public class Main {
 ```
 
 **Penjelasan:**
+
 - Dalam contoh ini, kita memiliki representasi bilangan kompleks dengan bagian riil dan imajiner.
 - Operator overloading digunakan untuk mengizinkan kita menambahkan dua objek bilangan kompleks dengan cara yang intuitif, seperti `num1 + num2`.
 
-#### 2. Generics (Parametric Polymorphism)  
+#### 2. Generics (Parametric Polymorphism)
+
 Parametric polymorphism, juga dikenal sebagai generic programming, adalah konsep dalam pemrograman komputer di mana suatu fungsi atau tipe data dapat bekerja dengan berbagai jenis data tanpa menggantungkan diri pada tipe data tertentu.
 
 **Generic Box:**
@@ -300,11 +313,13 @@ public class Main {
 ```
 
 **Penjelasan:**
+
 - Dalam contoh ini, kita memiliki kelas `Box` yang dapat menampung berbagai jenis tipe data, seperti kotak angka atau kotak kata.
 - Generics memungkinkan kita membuat kelas yang bersifat umum tanpa harus menentukan tipe data secara spesifik.
 
-#### 3. Metode Polimorfik (Polymorphic Algorithms)  
-Polymorphic algorithms merujuk pada konsep dalam pemrograman komputer di mana suatu algoritma dapat bekerja dengan berbagai tipe data atau objek, terlepas dari tipe data atau struktur data khusus yang digunakan.  
+#### 3. Metode Polimorfik (Polymorphic Algorithms)
+
+Polymorphic algorithms merujuk pada konsep dalam pemrograman komputer di mana suatu algoritma dapat bekerja dengan berbagai tipe data atau objek, terlepas dari tipe data atau struktur data khusus yang digunakan.
 
 **Metode Polimorfik untuk Penambahan:**
 
@@ -333,10 +348,12 @@ public class Main {
 ```
 
 **Penjelasan:**
+
 - Dalam contoh ini, kita memiliki kelas `MathOperation` dengan metode penambahan yang berbeda untuk tipe data int dan double.
 - Melalui metode polimorfik, kita dapat menambahkan angka dengan metode generik tanpa mempedulikan jenis data yang spesifik.
 
 ## Bacaan Lebih Lanjut
+
 Untuk mendalami konsep polimorfisme dan konsep lain dalam pemrograman berorientasi objek, silakan merujuk pada sumber-sumber berikut:
 
 ### Dokumentasi Resmi:
