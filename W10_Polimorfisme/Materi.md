@@ -192,6 +192,28 @@ class Wolf extends Animal {
 | **Hubungan Antar Metode**         | Independen satu sama lain, tanpa memperhatikan hubungan kelas. | Menciptakan hubungan antara metode di kelas induk dan kelas turunan, memungkinkan untuk polymorphism pada runtime. |
 | **Pewarisan vs. Independen**      | Independen dari pewarisan.                    | Terkait dengan pewarisan; metode yang sama diwariskan dan diberikan implementasi yang berbeda di kelas turunan. |  
 
+![Diagram Polimorfisme](https://github.com/apriliaindri/Teaching-Asistent-PPBO-2025/blob/main/W10_Polimorfisme/differences.jpg)
+
+## Keuntungan dan Kerugian Penggunaan Polimorfisme  
+
+**Keuntungan Polimorfisme dalam Java:**
+1. **Memungkinkan Kode yang Sama Dipakai Berulang:** Misalnya kita menulis kode untuk sesuatu yang berlaku untuk semua kelas (misalnya hewan), kita hanya perlu menuliskannya satu kali dan itu akan berfungsi untuk semua kelas turunannya (semua jenis hewan). 
+
+2. **Meningkatkan Keterbacaan dan Pemeliharaan Kode:** Dengan mengurangi jumlah kode yang perlu ditulis dan dipelihara, kode menjadi lebih mudah dibaca dan efisien, sehingga mudah diperbaiki jika ada kesalahan.
+
+3. **Mendukung Binding Dinamis:** Dukungan untuk binding dinamis memungkinkan pemanggilan metode yang tepat pada saat runtime, berdasarkan kelas  yang sebenarnya dari objek. Binding merujuk pada kaitan antara suatu nama (seperti nama metode atau variabel) dengan implementasinya. Ada dua jenis binding dalam pemrograman berorientasi objek: binding statis (atau early binding) dan binding dinamis (atau late binding).
+
+- **Statis (Early) Binding:** Terjadi pada saat kompilasi di mana kaitan antara nama dan implementasi sudah ditentukan. Hal ini umumnya terkait dengan metode overloading dan binding terjadi sebelum program dijalankan.
+
+- **Dinamis (Late) Binding:** Terjadi pada saat runtime di mana kaitan antara nama dan implementasinya ditentukan saat program dijalankan. Hal ini terkait dengan konsep polimorfisme dan terutama dengan metode overriding.
+
+Dalam contoh ini, objek dari kelas "Hewan" dan "Mobil" diperlakukan sebagai objek dari tipe "Hewan," memungkinkan kita untuk menggunakan polimorfisme untuk mengakses metode yang sama pada kedua objek.  
+
+**Kerugian Polimorfisme dalam Java:**
+1. **Meningkatkan Kesulitan Memahami Perilaku Objek:** Polimorfisme dapat membuat lebih sulit memahami perilaku suatu objek, terutama jika kode tersebut kompleks.
+
+2. **Potensial Masalah Kinerja:** Penggunaan polimorfisme dapat menyebabkan masalah kinerja karena perilaku polimorfik dapat memerlukan perhitungan tambahan pada saat runtime. 
+
 ## Contoh Penerapan Polimorfisme
 
 ### 1. Overloading dan Overriding pada Pewarisan
