@@ -118,14 +118,79 @@ public class Main {
         Animal myCat = new Cat();
 
         // Virtual method calls
-        myWolf.makeSound();  // Output: Wolf roars
-        myCat.makeSound();  // Output: Cat meows
+        myWolf.makeSound();
+        myCat.makeSound();
     }
 }
 ```  
 **Penjelasan:**
 Dalam contoh ini, metode makeSound pada kelas Animal dianggap sebagai virtual karena dapat di-override oleh kelas turunan. Saat objek dibuat menggunakan tipe data superclass (Animal), tetapi diinisialisasi dengan objek dari kelas turunan (Wolf dan Cat), metode yang dipanggil selama runtime adalah versi yang di-override oleh kelas turunan tersebut. Ini menunjukkan bagaimana virtual method mendukung runtime polymorphism dalam Java.  
 
+Mungkin kalian ingin tahu apa bedanya dengan method non-virtual?
+
+#### Perbedaan antara Method Virtual dan Non-Virtual
+| Kriteria               | Method Virtual                     | Method Non-Virtual                 |
+|------------------------|------------------------------------|------------------------------------|
+| **Default pada Java**  | Semua metode dianggap virtual secara default di Java. | Beberapa bahasa menggunakan kata kunci khusus (seperti `final` pada Java) untuk menandai metode sebagai non-virtual. |
+| **Pemanggilan Dinamis/Statis?** | Dinamis: Saat metode virtual dipanggil, pemilihan method yang akan dieksekusi terjadi pada saat runtime, berdasarkan jenis objek aktual. | Statis: Saat metode non-virtual dipanggil, pemilihan method yang akan dieksekusi terjadi pada saat kompilasi, bukan pada saat runtime. |
+| **Memungkinkan Polimorfisme?**       | Mendukung runtime polimorfisme, di mana metode yang benar dipilih berdasarkan objek aktual yang diakses pada saat runtime. | Tidak mendukung tingkat fleksibilitas yang sama seperti metode virtual dalam mencapai polimorfisme pada tingkat runtime. |
+
+Contoh Penggunaan pada Java:
+
+**Method Virtual (Default):**
+
+```java
+class Animal {
+    // Virtual method (bisa di-*override*)
+    void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Wolf extends Animal {
+    // Override virtual method
+    @Override
+    void makeSound() {
+        System.out.println("Wolf roars");
+    }
+}
+```  
+**Method Non-Virtual (Ditandai dengan final):**
+
+```java
+class Animal {
+    // Non-virtual method
+    final void makeSound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Wolf extends Animal {
+    // Compiler error: Cannot override the final method from Animal
+    void makeSound() {
+        System.out.println("Wolf roars");
+    }
+}
+```  
+
+## Perbedaan antara Compile Time dan Runtime Polymorphism
+| Kriteria                              | Compile Time Polymorphism               | Runtime Polymorphism                    |
+|---------------------------------------|----------------------------------------|----------------------------------------|
+| **Waktu Terjadinya**                   | Terjadi pada saat kompilasi.          | Terjadi pada saat runtime saat program dijalankan.|
+| **Pemilihan Metode**                   | Terjadi berdasarkan tipe dan jumlah parameter pada saat kompilasi. | Terjadi pada saat runtime, berdasarkan objek aktual yang diakses. |
+| **Konsep Utama**                       | Method overloading dan operator polymorphism. | Method overriding. |
+| **Keuntungan Utama**                   | Peningkatan keterbacaan dan pemeliharaan kode. | Fleksibilitas dan kemampuan untuk menangani objek dari kelas turunan dengan cara yang dinamis. |
+
+## Perbedaan Method Overloading dan Method Overriding  
+| Kriteria                          | Method Overloading                              | Method Overriding                              |
+|-----------------------------------|-------------------------------------------------|-------------------------------------------------|
+| **Definisi**                      | Dua atau lebih metode dalam satu kelas dengan nama yang sama tetapi dengan parameter yang berbeda. | Metode dalam kelas turunan menggantikan atau memberikan implementasi kembali dari metode yang ada di kelas induk. |
+| **Kelas yang Terlibat**           | Bisa terjadi dalam satu kelas.                       | Hanya bisa terjadi antara kelas induk dan kelas turunan.   |
+| **Parameter**                     | Jumlah atau tipe parameter harus berbeda.      | Jumlah dan tipe parameter harus sama.           |
+| **Keyword yang Digunakan**        | Tidak ada kata kunci spesifik yang digunakan.   | Sering menggunakan kata kunci `@Override` untuk menunjukkan bahwa ini adalah metode yang di-*override* (Jika tidak digunakan tidak apa-apa) |
+| **Ketentuan Kompilasi**           | Kompilasi berdasarkan jumlah atau tipe parameter yang berbeda. | Kompilasi berhasil jika ada metode dengan nama, tipe, dan jumlah parameter yang sama di kelas induk. Jika tidak, akan ada error kompilasi. |
+| **Hubungan Antar Metode**         | Independen satu sama lain, tanpa memperhatikan hubungan kelas. | Menciptakan hubungan antara metode di kelas induk dan kelas turunan, memungkinkan untuk polymorphism pada runtime. |
+| **Pewarisan vs. Independen**      | Independen dari pewarisan.                    | Terkait dengan pewarisan; metode yang sama diwariskan dan diberikan implementasi yang berbeda di kelas turunan. |  
 
 ## Contoh Penerapan Polimorfisme
 
