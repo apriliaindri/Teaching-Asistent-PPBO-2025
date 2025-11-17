@@ -1,12 +1,19 @@
 # Polimorfisme
 
-Kata "polimorfisme" berasal dari bahasa Yunani, di mana "poly" berarti banyak, dan "morphe" berarti bentuk. Jadi, secara harfiah, "polimorfisme" berarti memiliki banyak bentuk. Dalam konteks pemrograman, konsep polimorfisme mengacu pada kemampuan suatu objek untuk memiliki banyak tampilan atau perilaku, sesuai dengan konteks atau jenisnya. Polimorfisme menjadi konsep penting dalam pemrograman berorientasi objek yang memungkinkan objek dari kelas yang berbeda untuk diakses dan digunakan melalui antarmuka yang sama. Sederhananya, ini berarti kita dapat menggunakan suatu antarmuka atau kelas dasar untuk mengakses objek-objek yang mungkin memiliki implementasi yang berbeda. Dalam Java, polimorfisme dapat diimplementasikan pada tingkat kompilasi (compile time) dan pada tingkat runtime (runtime), memberikan fleksibilitas dan kemampuan untuk menangani berbagai tipe objek.
+Polimorfisme berasal dari bahasa Yunani: poly berarti “banyak” dan morphe berarti “bentuk”. Dalam pemrograman berorientasi objek, polimorfisme adalah kemampuan suatu objek untuk memiliki banyak bentuk atau perilaku yang berbeda, meskipun diakses melalui antarmuka atau kelas dasar yang sama.
+
+Konsep ini memungkinkan objek-objek dari kelas berbeda merespons dengan cara masing-masing meskipun dipanggil menggunakan metode yang sama. Dalam Java, polimorfisme terbagi menjadi dua jenis:
+
+1. Compile-time polymorphism (method overloading)
+2. Runtime polymorphism (method overriding)
+
+Polimorfisme memberikan fleksibilitas, memudahkan pengembangan kode, dan memungkinkan penanganan berbagai tipe objek secara seragam.
 
 ![Diagram Polimorfisme](https://github.com/apriliaindri/Teaching-Asistent-PPBO-2025/blob/main/W10_Polimorfisme/diagram.jpg)
 
 ## Compile Time Polymorphism
 
-Compile time polymorphism terjadi pada saat kompilasi program. Hal ini mencakup dua konsep utama: method overloading dan operator polymorphism. Saat program dikompilasi, kompiler menentukan metode atau operator mana yang harus dipanggil berdasarkan jumlah dan tipe parameter atau tipe operand yang digunakan.
+Compile time polymorphism terjadi pada saat kompilasi program. Hal ini mencakup dua konsep utama yaitu **method overloading dan operator polymorphism**. Saat program dikompilasi, kompiler akan menentukan metode atau operator mana yang harus dipanggil berdasarkan jumlah dan tipe parameter atau tipe operand yang digunakan.
 
 ### Method Overloading
 
@@ -47,7 +54,7 @@ public class Main {
 **Penjelasan:**
 
 - Kelas Calculator memiliki tiga metode add dengan nama yang sama tetapi berbeda dalam parameter.
-- Saat objek calculator dibuat, kita dapat memanggil metode add dengan parameter yang sesuai.
+- Saat kita membuat objek calculator dan memanggil method `add`, Java akan memilih parameter yang cocok berdasarkan inputnya.
 
 ## Contoh Penerapan Polimorfisme
 
