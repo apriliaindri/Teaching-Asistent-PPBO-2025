@@ -49,3 +49,56 @@ Life cycle (siklus hidup) dari sebuah thread dalam Java melibatkan serangkaian k
 5. Terminated/End (Berakhir):
    - Thread berada dalam keadaan ini ketika eksekusi thread selesai atau dihentikan.
    - Setelah thread berada dalam keadaan ini, tidak dapat dijalankan lagi.
+
+## Mendefinisikan dan Menjalankan MultiThread
+Thread dapat didefinisikan dalam 2 cara yaitu: 
+1. embuat sebuah class yang extends class `Thread` dari Java. 
+2. Mengimplementasikan interface `Runnable`.
+
+### Mengextend Thread Class
+Pertama, definisikanlah class tersebut seperti di bawah ini.
+
+```java
+class MyThread extends Thread {
+    public void run() {
+        // Definisikan pekerjaan Thread kalian disini
+    }
+}
+```
+
+Setelah itu, kalian dapat menjalankan thread yang kalian buat lewat fungsi `main`. Kalian dapat meng-invoke metode `start` untuk menjalankan pekerjaan thread tersebut.
+
+```java
+public class Threading {
+    public static void main(String[] args) {
+        MyThread thread1 = new MyThread();
+        MyThread thread2 = new MyThread();
+        thread1.start();
+        thread2.start();
+    }
+}
+```
+Dalam contoh di atas, kita membuat thread dengan meng-extend kelas Thread atau mengimplementasikan antarmuka Runnable dan memulai eksekusinya dengan memanggil metode start(). Hal ini memungkinkan kedua thread berjalan secara bersamaan.
+
+### Mengimplementasikan Interface Runnable
+
+Selain mengextend class `Thread`, dapat juga dengan mengimplementasikan interface `Runnable` untuk mendefinisikan MultiThreading.
+
+```java 
+class MyRunnable implements Runnable {
+    public void run() {
+        // Kode yang akan dieksekusi dalam thread
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Thread thread1 = new Thread(new MyRunnable());
+        Thread thread2 = new Thread(new MyRunnable());
+
+        thread1.start(); // Memulai eksekusi thread1
+        thread2.start(); // Memulai eksekusi thread2
+    }
+}
+
+```
