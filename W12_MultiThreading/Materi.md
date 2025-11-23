@@ -1,0 +1,51 @@
+# MultiThreading
+
+## Konsep Dasar MultiThreading
+Konsep Multithreading berkaitan erat dengan konsep multitasking. Seperti yang diketahui multitasking merupakan pelaksanaan 2 kegiatan atau lebih dalam satu waktu, multitasking dibagi menjadi 2 yaitu `Process Based` dan `Thread Base`. 
+
+`Process Based` adalah multitasking ketika suatu program dijalankan bersamaan dengan program lain dalam satu waktu. Contoh kasus suatu multitasking Process Based adalah bila kita sedang menulis
+laporan di OpenOffice sambil mencari referensi di Internet dengan menggunakan Software Mozila
+sebagai Software Browser dalam satu waktu. Dalam hal ini, berarti kita sedang menggunakan 2 software dalam
+satu waktu. 
+
+Sedangkan `Thread Base` merupakan multitasking saat suatu program dijalankan, program itu dapat
+melakukan proses – proses lain yang dilakukan bersamaan dalam suatu waktu. Contohnya adalah
+bila kita sedang mencetak suatu lembar laporan yang kita lakukan di OpenOffice misalnya. Kadang
+sambil menunggu cetakan selesai, kita biasa melihat-lihat cetakan selanjutnya yang akan dicetak,
+dan kadang kita juga mengedit tulisan dengan merubah ukuaran huruf atau warna huruf misalnya.
+Nah, inilah proses Thread Base multitasking yang terjadi dalam kegiatan tersebut.
+
+## Pengertian MultiThread
+Multithreading adalah suatu kemampuan yang memungkinkan beberapa kumpulan
+instruksi atau proses dapat dijalankan secara bersamaan dalam sebuah program. Satu kumpulan
+instruksi yang akan dieksekusi secara independen dinamakan `Thread`.
+Multithreading memungkinkan beberapa thread berjalan secara bersamaan, membantu memaksimalkan penggunaan sumber daya dan meningkatkan kinerja. Jadi, jika kita membuat 2 thread untuk mengerjakan 2 pekerjaan yang berbeda, kedua thread dapat mulai berjalan bersama-sama, 
+tanpa harus menunggu yang satu selesai.
+Setiap kali kalian membuat program Java, paling tidak kalian telah membuat sebuah thread, yaitu main thread. 
+Main thread adalah thread yang dibuat untuk mengeksekusi metode `main` dari program, dan secara otomatis dibuat oleh compiler tanpa harus kalian buat secara manual.
+
+## Life Cycle of a Thread
+![Thread Lyfe Cycle](ThreadLyfeCycle.png)
+
+Source : TutorialsPoint (https://www.tutorialspoint.com/java/java_multithreading.htm)
+
+
+Life cycle (siklus hidup) dari sebuah thread dalam Java melibatkan serangkaian keadaan yang dimulai saat thread dibuat hingga saat thread selesai dieksekusi atau dihentikan. Berikut adalah lima keadaan utama Life Cicle pada sebuah thread:
+
+1. New (Baru):
+   - Thread berada dalam keadaan ini setelah objek thread dibuat menggunakan operator new. Pada saat ini, thread belum diizinkan untuk dieksekusi.
+
+2. Runnable (Dapat dijalankan):
+   - Thread masuk ke keadaan ini setelah metode start() dipanggil.
+   - Pada saat ini, sistem operasi dapat memilih thread ini untuk dieksekusi, namun sebenarnya belum terjadi eksekusi.
+     
+3. Running
+   - Pada fase ini thread sedang dieksekusi.
+     
+4. Waiting/Blocked (Menunggu):
+   - Thread masuk ke keadaan ini ketika thread sedang menunggu sesuatu, misalnya menunggu input atau respon dari sumber eksternal.
+   - Pada saat ini, thread tidak dapat dieksekusi sampai kondisi tertentu terpenuhi.
+
+5. Terminated/End (Berakhir):
+   - Thread berada dalam keadaan ini ketika eksekusi thread selesai atau dihentikan.
+   - Setelah thread berada dalam keadaan ini, tidak dapat dijalankan lagi.
