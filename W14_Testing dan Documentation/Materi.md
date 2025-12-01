@@ -16,11 +16,14 @@ dalam pengembangan dan pemeliharaan di masa mendatang.
    Pada file `pom.xml` lakukan add dependency dengan cara klik `alt + ins` untuk windows lalu tambahkan `JUnit`.
    Lalu di bagian file pom.xml nya akan terbentuk seperti berikut.
    ```java
+    <dependencies>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
             <version>5.8.2</version>
-        </dependency>>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
     ```
 
 3. Membuat Class Baru yang Akan Diberikan Unit Test
