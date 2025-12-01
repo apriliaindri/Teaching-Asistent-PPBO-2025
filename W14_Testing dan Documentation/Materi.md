@@ -43,17 +43,18 @@ dalam pengembangan dan pemeliharaan di masa mendatang.
    Selanjutnya buat Unit Test untuk `Circle` class untuk memastikan method `calculateArea` bekerja sesuai dengan yang diharapkan. Caranya dengan membuat class didalam src/main/test directory.
    Pada contoh ini dibuat class `CircleTest` yang berisikan method `givenRadius_whenCalculateArea_thenReturnArea()` kemudian membandingkan antara actual area hasil dari perhitungan di class     Circle dan juga expexted area hasil perhitungan sebagai testingnya.
    ```java
-   import org.junit.Assert;
+   import org.junit.jupiter.api.Assertions;
    import org.junit.jupiter.api.Test;
 
    public class CircleTest {
 
     @Test
     public void givenRadius_whenCalculateArea_thenReturnArea() {
-        double actualArea = Circle.calculateArea(2.0);
-        double expectedArea = 3.141592653589793 * 2.0 * 2.0;
+        double radius = 2.0;
+        double actual = Circle.calculateArea(radius);
+        double expected = Math.PI * radius * radius;
         double delta = 0.001;
-        Assert.assertEquals(expectedArea, actualArea, delta);
+        Assertions.assertEquals(expected, actual, delta);
       }
     }
    ```
